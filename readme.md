@@ -8,6 +8,11 @@ On this Readme I will use add the projects according I move forward  with the tu
 
 # IMPORTANT (REMINDER)
 
+To create a project there are many way. At the moment we are creating the vue projects this way
+```
+vue-init wepack-simple <PROJECT_NAME>
+```
+
 On Vuejs there is a way to work with **ON** and **BIND**
 
 The first way is using **v-on** (for ON case) and **v-bind** Example:
