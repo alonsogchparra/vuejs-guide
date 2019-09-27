@@ -4,20 +4,25 @@
       <div class="col-12">
         <div class="d-flex py-3">
           <div class="col-4">
-            <button class="btn btn-danger btn-block">Quote</button>
+            <button @click="selectedComponent='appQuote'" class="btn btn-danger btn-block">Quote</button>
           </div>
           <div class="col-4">
-            <button class="btn btn-danger btn-block">Author</button>
+            <button @click="selectedComponent='appAuthor'" class="btn btn-danger btn-block">Author</button>
           </div>
           <div class="col-4">
-            <button class="btn btn-danger btn-block">New</button>
+            <button @click="selectedComponent='appNew'" class="btn btn-danger btn-block">New</button>
           </div>
         </div>
         <hr>
         <p>{{ selectedComponent }}</p>
-        <app-quote>
+        <keep-alive>
+          <component :is="selectedComponent">
+            <p>Default Component</p>
+          </component>
+        </keep-alive>
+        <!-- <app-quote>
           <h2 slot="title">{{ quoteTitle }}</h2>
-        </app-quote>
+        </app-quote> -->
       </div>
     </div>
   </div>
@@ -37,7 +42,9 @@ export default {
     }
   },
   components: {
-    appQuote: Quote
+    appQuote: Quote,
+    appAuthor: Author,
+    appNew: New
   }
 }
 </script>
